@@ -1,0 +1,27 @@
+"""
+UNDERSTAND:
+There is an array given as nums and we will have to return true
+if the same numbers occures more than once.
+If not we will return false
+
+PLAN:
+Edge cases: check if there is anything on the array
+Then sort the array
+then use a for loop and check if the index i and i-1 are the same
+values, if so, return TRUE otherwise FALSE
+"""
+
+# Implementation:
+
+class Solution:
+    def hasDuplicate(self, nums: List[int]) -> bool:
+
+        if not nums:
+            return False
+
+        nums.sort()
+
+        for i in range(len(nums)-1):
+            if nums[i] == nums[i+1]:
+                return True
+        return False
